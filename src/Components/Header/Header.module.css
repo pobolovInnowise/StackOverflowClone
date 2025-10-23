@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9f9;
+  border-bottom: 1px solid #f8f9f9;
+  grid-area: h;
+  border-bottom: 1px solid #dedede;
+}
+
+.headerLogo img {
+  height: 35px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.headerLogo img:hover {
+  transform: scale(1.05);
+}
+
+.headerButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.headerButtons button {
+  width: 90px;
+  padding: 10px 15px;
+  border: solid transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.headerButtonsLogin {
+  background-color: #f8f9f9;
+  color: #0074cc;
+}
+
+.headerButtonsLogin:hover {
+  background-color: #e1ecf4;
+  color: #0074cc;
+}
+
+.headerButtonsSignup {
+  background-color: #0074cc;
+  color: #f8f9f9;
+}
+
+.headerButtonsSignup:hover {
+  background-color: #004d86;
+}

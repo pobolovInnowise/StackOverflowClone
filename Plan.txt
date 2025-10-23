@@ -1,0 +1,23 @@
+1)Register page
+2)Login Page
+3)Home Page
+4)Post Page
+5)Account Page
+6)Create post page
+7)My posts page
+8)Edit post page
+9)Users page
+10)User Page
+11)Questions page
+12)Create question page
+13)
+
+
+paination
+thunks
+error boundary
+api dal сделать как хок
+formik
+code library
+css
+websocket
