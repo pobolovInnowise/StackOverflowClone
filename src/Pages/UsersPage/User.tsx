@@ -12,7 +12,7 @@ const User: React.FC<Properties> = ({ user, onClick }) => {
       <div className={styles.userInfo}>
         <span className={styles.userName}>User name: {user.username}</span>
         <span className={styles.userId}>ID: {user.id}</span>
-        <span>Role: : {user.role}</span>
+        <span>Role: {user.role}</span>
       </div>
     </div>
   );
