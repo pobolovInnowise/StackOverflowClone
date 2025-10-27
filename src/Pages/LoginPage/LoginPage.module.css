@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: 350px;
 }
 
 .loginCard h2 {

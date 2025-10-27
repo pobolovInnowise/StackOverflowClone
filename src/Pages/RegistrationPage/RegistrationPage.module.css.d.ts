@@ -4,5 +4,14 @@ declare const styles: {
   readonly signUpCard: string;
   readonly signUpContainer: string;
   readonly signUpInput: string;
+
+
+  readonly disabled:string;
+  readonly errorMessage:string;
+  readonly changeInfoContentPassword:string;
+  readonly signUpInputSuccess:string;
+  readonly signUpInputError:string;
+
+
 };
 export = styles;
