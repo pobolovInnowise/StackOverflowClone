@@ -74,12 +74,12 @@ const RegistrationPage: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const [username, setUsername] = useState<string>('');
-  const [newPassword, setNewPassword] = useState<string>(''); // заменили password
+  const [newPassword, setNewPassword] = useState<string>('');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
   const [isNewPasswordCorrect, setIsNewPasswordCorrect] = useState<boolean>(false);
   const [isConfirmedPasswordWrong, setConfirmedPasswordWrong] = useState<boolean>(false);
 
-  // тот же RegExp, что в AccountPage
+
   const regExp: RegExp =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,}$/;
 
@@ -87,7 +87,6 @@ const RegistrationPage: React.FC = () => {
     setUsername(e.currentTarget.value);
   };
 
-  // из AccountPage
   const handleNewPassword = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setNewPassword(e.currentTarget.value);
     if (regExp.test(e.currentTarget.value)) {
