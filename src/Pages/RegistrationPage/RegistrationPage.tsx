@@ -103,7 +103,6 @@ const RegistrationPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // из AccountPage
     if (newPassword === confirmPassword) {
       dispatch(registerUserTC(username, newPassword));
       navigate('/login');
@@ -154,8 +153,6 @@ const RegistrationPage: React.FC = () => {
           >
             Sign up
           </button>
-
-
 
         <button
           type="button"
