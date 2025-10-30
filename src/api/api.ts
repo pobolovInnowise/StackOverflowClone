@@ -9,7 +9,9 @@ export const api = axios.create({
   },
 });
 
-export default class Api {
+  class Api {
+
+
   registerUser = async (username: string, password: string) => {
     const api_url: string = '/api/register';
     const response = await axios.post(api_url, {
@@ -187,3 +189,7 @@ export default class Api {
     return response;
   };
 }
+
+
+
+export default new Api();

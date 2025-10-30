@@ -1,8 +1,6 @@
-import Api from '../api/api.js';
-import user from '../Pages/UsersPage/User';
+import api from '../api/api.js';
 import { ActionType, SnippetType, QuestionType } from '../Types/types';
 import { AppDispatch, RootState } from './reduxStore';
-import { getQuestionsTC } from './questionsReducer';
 
 const SET_IS_LOGGED_IN = 'SET_IS_LOGGED_IN';
 const SET_LOGGED_IN_USER_NAME = 'SET_LOGGED_IN_USER_NAME';
@@ -19,7 +17,6 @@ const SET_MY_QUESTIONS = 'SET_MY_QUESTIONS';
 const CLEAR_MY_QUESTIONS = 'CLEAR_MY_QUESTIONS';
 const SET_SELECTED_QUESTION_ID = 'SET_SELECTED_QUESTION_ID';
 
-const api = new Api();
 
 type State = {
   isLoggedIn: boolean;

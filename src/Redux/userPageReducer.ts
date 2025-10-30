@@ -1,4 +1,4 @@
-import Api from '../api/api.js';
+import api from '../api/api.js';
 import { ActionType, UserType, UserProfileType } from '../Types/types';
 import { AppDispatch, RootState } from './reduxStore';
 
@@ -8,7 +8,6 @@ const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 const SET_IS_FETCHING = 'SET_IS_FETCHING';
 const SET_SELECTED_USER_PROFILE = 'SET_SELECTED_USER_PROFILE';
 
-const api = new Api();
 
 type State = {
   users: UserType[];

@@ -15,7 +15,6 @@ const reducers = combineReducers({
 const store = createStore(reducers, applyMiddleware(thunkMiddleware));
 export type RootState = ReturnType<typeof reducers>;
 
-// 🔹 Тип диспатча
 export type AppDispatch = typeof store.dispatch;
 
 export default store;

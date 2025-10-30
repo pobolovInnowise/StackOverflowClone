@@ -44,7 +44,7 @@ export type SnippetType = {
   comments: Comment[];
   marks: MarkType[];
   user: UserType;
-  [key: string]: any; // любые дополнительные необязательные поля
+  [key: string]: any;
 };
 
 export type AnswerType = {

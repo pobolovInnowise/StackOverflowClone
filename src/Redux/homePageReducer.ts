@@ -1,4 +1,4 @@
-import Api from '../api/api.js';
+import api from '../api/api.js';
 import { SnippetType, CommentType, ActionType, MarkType } from '../Types/types';
 import { AppDispatch, RootState } from './reduxStore';
 
@@ -10,7 +10,6 @@ const SET_SELECTED_SNIPPET_ID = 'SET_SELECTED_SNIPPET_ID';
 const SET_SELECTED_SNIPPET_COMMENTS = 'SET_SELECTED_SNIPPET_COMMENTS';
 const SET_LANGUAGES_FROM_SERVER = 'SET_LANGUAGES_FROM_SERVER';
 
-const api = new Api();
 
 type State = {
   snippets: SnippetType[];

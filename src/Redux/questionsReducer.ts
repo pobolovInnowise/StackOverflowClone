@@ -1,4 +1,4 @@
-import Api from '../api/api.js';
+import api from '../api/api.js';
 import { ActionType, AnswerType, QuestionType } from '../Types/types';
 import { AppDispatch, RootState } from './reduxStore';
 
@@ -9,7 +9,6 @@ const SET_IS_FETCHING = 'SET_IS_FETCHING';
 const SET_SELECTED_QUESTION_ID = 'SET_SELECTED_QUESTION_ID';
 const SET_SELECTED_QUESTION_ANSWERS = 'SET_SELECTED_QUESTION_ANSWERS';
 
-const api = new Api();
 
 type State = {
   questions: QuestionType[];
