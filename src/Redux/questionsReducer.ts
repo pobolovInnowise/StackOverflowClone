@@ -31,50 +31,50 @@ const initialState: State = {
 };
 const questionsReducer = (state: State = initialState, action: ActionType) => {
   if (action.type === SET_QUESTIONS)
-    return { ...state, questions: action.questions };
+    return { ...state, questions: action.payload };
   else if (action.type === SET_TOTAL_QUESTIONS_COUNT)
-    return { ...state, totalQuestionsCount: action.totalQuestionsCount };
+    return { ...state, totalQuestionsCount: action.payload };
   else if (action.type === SET_IS_FETCHING)
-    return { ...state, isFetching: action.isFetching };
+    return { ...state, isFetching: action.payload };
   else if (action.type === SET_SELECTED_QUESTION_ID)
-    return { ...state, selectedQuestionId: action.id };
+    return { ...state, selectedQuestionId: action.payload };
   else if (action.type === SET_SELECTED_QUESTION_ANSWERS)
-    return { ...state, selectedQuestionAnswers: [...action.answers] };
+    return { ...state, selectedQuestionAnswers: [...action.payload] };
   else if (action.type === SET_CURRENT_PAGE)
-    return { ...state, currentPage: action.currentPage };
+    return { ...state, currentPage: action.payload };
 
   return state;
 };
 
-export const setQuestionsAC = (questions: QuestionType[]) => {
+export const setQuestionsAC = (questions: QuestionType[]):ActionType => {
   return {
     type: SET_QUESTIONS,
-    questions: questions,
+    payload: questions,
   };
 };
-export const setCurrentPageAC = (currentPage: number) => {
+export const setCurrentPageAC = (currentPage: number):ActionType => {
   return {
     type: SET_CURRENT_PAGE,
-    currentPage: currentPage,
+    payload: currentPage,
   };
 };
-export const setTotalQuestionsCountAC = (totalQuestionsCount: number) => {
+export const setTotalQuestionsCountAC = (totalQuestionsCount: number):ActionType => {
   return {
     type: SET_TOTAL_QUESTIONS_COUNT,
-    totalQuestionsCount: totalQuestionsCount,
+    payload: totalQuestionsCount,
   };
 };
-export const setIsFetchingAC = (isFetching: boolean) => {
+export const setIsFetchingAC = (isFetching: boolean):ActionType => {
   return {
     type: SET_IS_FETCHING,
-    isFetching: isFetching,
+    payload: isFetching,
   };
 };
 
-export const setSelectedQuestionIdAC = (id: number) => {
+export const setSelectedQuestionIdAC = (id: number):ActionType => {
   return {
     type: SET_SELECTED_QUESTION_ID,
-    id: id,
+    payload: id,
   };
 };
 

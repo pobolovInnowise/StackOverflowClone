@@ -44,49 +44,47 @@ const usersPageReducer = (
   state: State = initialState,
   action: ActionType
 ): State => {
-  if (action.type === SET_USERS) return { ...state, users: [...action.users] };
+  if (action.type === SET_USERS) return { ...state, users: [...action.payload] };
   else if (action.type === SET_CURRENT_PAGE)
-    return { ...state, currentPage: action.currentPage };
+    return { ...state, currentPage: action.payload };
   else if (action.type === SET_TOTAL_USERS_COUNT)
-    return { ...state, totalUsersCount: action.totalUsersCount };
+    return { ...state, totalUsersCount: action.payload };
   else if (action.type === SET_IS_FETCHING)
-    return { ...state, isFetching: action.isFetching };
+    return { ...state, isFetching: action.payload };
   else if (action.type === SET_SELECTED_USER_PROFILE)
-    return { ...state, selectedUserProfile: action.selectedUserProfile };
+    return { ...state, selectedUserProfile: action.payload };
   return state;
 };
 
 export const setUsersAC = (users: UserType[]): ActionType => {
   return {
     type: SET_USERS,
-    users: users,
+    payload: users,
   };
 };
 export const setCurrentPageAC = (currentPage: number): ActionType => {
   return {
     type: SET_CURRENT_PAGE,
-    currentPage: currentPage,
+    payload: currentPage,
   };
 };
 export const setTotalUsersCountAC = (totalUsersCount: number): ActionType => {
   return {
     type: SET_TOTAL_USERS_COUNT,
-    totalUsersCount: totalUsersCount,
+    payload: totalUsersCount,
   };
 };
 export const setIsFetchingAC = (isFetching: boolean): ActionType => {
   return {
     type: SET_IS_FETCHING,
-    isFetching: isFetching,
+    payload: isFetching,
   };
 };
 
-export const setSelectedUserProfileAC = (
-  selectedUserProfile: UserProfileType
-): ActionType => {
+export const setSelectedUserProfileAC = (selectedUserProfile: UserProfileType): ActionType => {
   return {
     type: SET_SELECTED_USER_PROFILE,
-    selectedUserProfile: selectedUserProfile,
+    payload: selectedUserProfile,
   };
 };
 

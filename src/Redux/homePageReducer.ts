@@ -34,58 +34,58 @@ const initialState: State = {
 };
 const homePageReducer = (state: State = initialState, action: ActionType) => {
   if (action.type === SET_SNIPPETS)
-    return { ...state, snippets: action.snippets };
+    return { ...state, snippets: action.payload };
   else if (action.type === SET_TOTAL_SNIPPETS_COUNT)
-    return { ...state, totalSnippetsCount: action.totalSnippetsCount };
+    return { ...state, totalSnippetsCount: action.payload };
   else if (action.type === SET_IS_FETCHING)
-    return { ...state, isFetching: action.isFetching };
+    return { ...state, isFetching: action.payload };
   else if (action.type === SET_SELECTED_SNIPPET_ID)
-    return { ...state, selectedSnippetId: action.id };
+    return { ...state, selectedSnippetId: action.payload };
   else if (action.type === SET_SELECTED_SNIPPET_COMMENTS)
-    return { ...state, selectedSnippetComments: [...action.comments] };
+    return { ...state, selectedSnippetComments: [...action.payload] };
   else if (action.type === SET_CURRENT_PAGE)
-    return { ...state, currentPage: action.currentPage };
+    return { ...state, currentPage: action.payload };
   else if (action.type === SET_LANGUAGES_FROM_SERVER)
-    return { ...state, languages: [...action.languages] };
+    return { ...state, languages: [...action.payload] };
 
   return state;
 };
 
-export const setSnippetsAC = (snippets: SnippetType[]) => {
+export const setSnippetsAC = (snippets: SnippetType[]):ActionType => {
   return {
     type: SET_SNIPPETS,
-    snippets: snippets,
+    payload: snippets,
   };
 };
-export const setCurrentPageAC = (currentPage: number) => {
+export const setCurrentPageAC = (currentPage: number):ActionType => {
   return {
     type: SET_CURRENT_PAGE,
-    currentPage: currentPage,
+    payload: currentPage,
   };
 };
-export const setTotalSnippetsCountAC = (totalSnippetsCount: number) => {
+export const setTotalSnippetsCountAC = (totalSnippetsCount: number):ActionType => {
   return {
     type: SET_TOTAL_SNIPPETS_COUNT,
-    totalSnippetsCount: totalSnippetsCount,
+    payload: totalSnippetsCount,
   };
 };
-export const setIsFetchingAC = (isFetching: boolean) => {
+export const setIsFetchingAC = (isFetching: boolean):ActionType => {
   return {
     type: SET_IS_FETCHING,
-    isFetching: isFetching,
+    payload: isFetching,
   };
 };
 
-export const setSelectedSnippetIdAC = (id: number) => {
+export const setSelectedSnippetIdAC = (id: number):ActionType => {
   return {
     type: SET_SELECTED_SNIPPET_ID,
-    id: id,
+    payload: id,
   };
 };
-export const setSelectedSnippetCommentsAC = (comments: Comment[]) => {
+export const setSelectedSnippetCommentsAC = (comments: CommentType[]):ActionType => {
   return {
     type: SET_SELECTED_SNIPPET_COMMENTS,
-    comments: comments,
+    payload: comments,
   };
 };
 
@@ -125,10 +125,10 @@ export const getSnippetLanguagesTC = () => {
   };
 };
 
-export const setLanguagesFromServerAC = (languages: string[]) => {
+export const setLanguagesFromServerAC = (languages: string[]):ActionType => {
   return {
     type: SET_LANGUAGES_FROM_SERVER,
-    languages: languages,
+    payload: languages,
   };
 };
 

@@ -1,20 +1,21 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import userPageReducer from './userPageReducer';
 import homePageReducer from './homePageReducer';
 import authReducer from './authReducer';
 import questionsReducer from './questionsReducer';
-import { thunk as thunkMiddleware } from 'redux-thunk';
 
-const reducers = combineReducers({
+const rootReducer = combineReducers({
   usersPage: userPageReducer,
   homePage: homePageReducer,
   auth: authReducer,
   questionsPage: questionsReducer,
 });
 
-const store = createStore(reducers, applyMiddleware(thunkMiddleware));
-export type RootState = ReturnType<typeof reducers>;
+export const store = configureStore({
+  reducer: rootReducer,
+});
 
+export type RootState = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;
 
 export default store;

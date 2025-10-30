@@ -1,6 +1,6 @@
 export type ActionType = {
   type: string;
-  [key: string]: any;
+  payload?: any;//контролирую тип пейлоада в action.creator
 };
 
 export type UserType = {
@@ -12,39 +12,39 @@ export type UserType = {
 export type CommentType = {
   id: number;
   content: string;
-  user: UserType;
-  [key: string]: any;
 };
 
 export type MarkType = {
   id: number;
-  type: string;
-  user: UserType;
-  [key: string]: any;
+  type: 'like' | 'dislike';
 };
+
+export type StatisticType = {
+  snippetsCount: number | null;
+  rating: number | null;
+  commentsCount: number | null;
+  likesCount: number | null;
+  dislikesCount: number | null;
+  questionsCount: number | null;
+  correctAnswersCount: number | null;
+  regularAnswersCount: number | null;
+}
 
 export type UserProfileType = {
   id: number | null;
   username: string | null;
   role: string | null;
-  statistic: {
-    snippetsCount: number | null;
-    rating: number | null;
-    commentsCount: number | null;
-    likesCount: number | null;
-    dislikesCount: number | null;
-    questionsCount: number | null;
-    correctAnswersCount: number | null;
-    regularAnswersCount: number | null;
-  };
+  statistic: StatisticType;
 };
 
+
 export type SnippetType = {
+  id:number;
+  language:string;
   code: string;
   comments: Comment[];
   marks: MarkType[];
   user: UserType;
-  [key: string]: any;
 };
 
 export type AnswerType = {

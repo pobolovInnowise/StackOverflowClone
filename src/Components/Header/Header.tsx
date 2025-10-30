@@ -1,4 +1,3 @@
-import * as React from 'react';
 import * as styles from './Header.module.css';
 import logo from '../../assets/logo-stackoverflow.svg';
 import { NavLink } from 'react-router-dom';
@@ -6,7 +5,7 @@ import { logoutUserTC } from '../../Redux/authReducer';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 
-const Header: React.FC = () => {
+const Header = () => {
   const navigate = useNavigate();
 
   const dispatch = useAppDispatch();

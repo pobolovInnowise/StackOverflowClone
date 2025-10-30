@@ -18,7 +18,7 @@ export const api = axios.create({
       username: username,
       password: password,
     });
-    console.log(response.data);
+
   };
 
   loginUser = async (username: string, password: string) => {
@@ -30,7 +30,7 @@ export const api = axios.create({
       });
       return response;
     } catch (error) {
-      console.error('login error: ', error);
+
       return 'error';
     }
   };
@@ -49,12 +49,12 @@ export const api = axios.create({
   getUserProfile = async (userId: number) => {
     const api_url: string = `/api/users/${userId}/statistic`;
     const response = await axios.get(api_url);
-    console.log(response);
     return response;
   };
   getSnippets = async (pageNumber: number, pageSize: number) => {
     const api_url: string = `/api/snippets?page=${pageNumber}&limit=${pageSize}&sortBy=username:ASC`;
     const response = await axios.get(api_url);
+    console.log(response);
     return response;
   };
 

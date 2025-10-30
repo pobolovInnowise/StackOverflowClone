@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import * as React from 'react';
 import userIcon from '../../assets/user-icon.png';
 import * as styles from './AccountPage.module.css';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +12,7 @@ import {
 import UserProfilePage from '../UserProfilePage/UserProfilePage.js';
 import { getUserProfileTC } from '../../Redux/userPageReducer';
 
-const AccountPage: React.FC = () => {
+const AccountPage = () => {
   const navigate = useNavigate();
 
   const [newUsername, setNewUsername] = useState('');
@@ -34,6 +33,7 @@ const AccountPage: React.FC = () => {
   );
 
   const dispatch = useAppDispatch();
+
 
   const regExp: RegExp =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,}$/;

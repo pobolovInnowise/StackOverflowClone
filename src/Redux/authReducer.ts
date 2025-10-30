@@ -43,13 +43,13 @@ const initialState: State = {
 };
 const authReducer = (state: State = initialState, action: ActionType) => {
   if (action.type === SET_IS_LOGGED_IN)
-    return { ...state, isLoggedIn: action.status };
+    return { ...state, isLoggedIn: action.payload };
   else if (action.type === SET_LOGGED_IN_USER_NAME)
-    return { ...state, loggedInUsername: action.username };
+    return { ...state, loggedInUsername: action.payload };
   else if (action.type === SET_LOGGED_IN_ROLE)
-    return { ...state, loggedInRole: action.role };
+    return { ...state, loggedInRole: action.payload };
   else if (action.type === SET_LOGGED_IN_ID)
-    return { ...state, loggedInId: action.id };
+    return { ...state, loggedInId: action.payload };
   else if (action.type === EMPTYING_STATE)
     return {
       ...state,
@@ -60,46 +60,46 @@ const authReducer = (state: State = initialState, action: ActionType) => {
       isCredentialsCorrect: 1,
     };
   else if (action.type === SET_IS_CREDENTIALS_CORRECT)
-    return { ...state, isCredentialsCorrect: action.value };
+    return { ...state, isCredentialsCorrect: action.payload };
   else if (action.type === SET_MY_SNIPPETS)
-    return { ...state, mySnippets: [...action.mySnippets] };
+    return { ...state, mySnippets: [...action.payload] };
   else if (action.type === CLEAR_MY_SNIPPETS)
     return { ...state, mySnippets: [] };
   else if (action.type === SET_SNIPPET_TO_EDIT)
-    return { ...state, snippetToEdit: action.snippet };
+    return { ...state, snippetToEdit: action.payload };
   else if (action.type === SET_MY_QUESTIONS)
-    return { ...state, myQuestions: [...action.questions] };
+    return { ...state, myQuestions: [...action.payload] };
   else if (action.type === SET_SELECTED_QUESTION_ID)
-    return { ...state, selectedQuestionId: action.selectedQuestionId };
+    return { ...state, selectedQuestionId: action.payload };
 
   return state;
 };
 
-export const setIsLoggedInAC = (status: boolean) => {
+export const setIsLoggedInAC = (status: boolean):ActionType => {
   return {
     type: SET_IS_LOGGED_IN,
-    status: status,
+    payload: status,
   };
 };
 
-export const setLoggedInUsernameInAC = (username: string) => {
+export const setLoggedInUsernameInAC = (username: string):ActionType => {
   return {
     type: SET_LOGGED_IN_USER_NAME,
-    username: username,
+    payload: username,
   };
 };
 
-export const setLoggedInIdAC = (id: number) => {
+export const setLoggedInIdAC = (id: number):ActionType  => {
   return {
     type: SET_LOGGED_IN_ID,
-    id: id,
+    payload: id,
   };
 };
 
-export const setLoggedInRoleAC = (role: string) => {
+export const setLoggedInRoleAC = (role: string):ActionType => {
   return {
     type: SET_LOGGED_IN_ROLE,
-    role: role,
+    payload: role,
   };
 };
 
@@ -137,7 +137,7 @@ export const registerUserTC = (username: string, password: string) => {
   };
 };
 
-export const emptyingStateAC = () => {
+export const emptyingStateAC = ():ActionType  => {
   return {
     type: EMPTYING_STATE,
   };
@@ -154,10 +154,10 @@ export const logoutUserTC = () => {
   };
 };
 
-export const setIsCredentialsCorrectAC = (value: boolean | number) => {
+export const setIsCredentialsCorrectAC = (value: boolean | number):ActionType  => {
   return {
     type: SET_IS_CREDENTIALS_CORRECT,
-    value: value,
+    payload: value,
   };
 };
 
@@ -169,14 +169,14 @@ export const deleteAccountTC = () => {
   };
 };
 
-export const setMySnippetsAC = (mySnippets: SnippetType[]) => {
+export const setMySnippetsAC = (mySnippets: SnippetType[]):ActionType  => {
   return {
     type: SET_MY_SNIPPETS,
-    mySnippets: mySnippets,
+    payload: mySnippets,
   };
 };
 
-export const clearMySnippetsAC = () => {
+export const clearMySnippetsAC = ():ActionType  => {
   return {
     type: CLEAR_MY_SNIPPETS,
   };
@@ -199,17 +199,17 @@ export const getUserQuestionsTC = () => {
   };
 };
 
-export const setMyQuestionsAC = (questions: QuestionType[]) => {
+export const setMyQuestionsAC = (questions: QuestionType[]):ActionType  => {
   return {
     type: SET_MY_QUESTIONS,
-    questions: questions,
+    payload: questions,
   };
 };
 
-export const setSnippetToEditAC = (snippet: SnippetType) => {
+export const setSnippetToEditAC = (snippet: SnippetType):ActionType  => {
   return {
     type: SET_SNIPPET_TO_EDIT,
-    snippet: snippet,
+    payload: snippet,
   };
 };
 
@@ -224,10 +224,10 @@ export const changeSnippetTC = (
   };
 };
 
-export const setSelectedQuestionIdAC = (selectedQuestionId: number) => {
+export const setSelectedQuestionIdAC = (selectedQuestionId: number):ActionType  => {
   return {
     type: SET_SELECTED_QUESTION_ID,
-    selectedQuestionId: selectedQuestionId,
+    payload: selectedQuestionId,
   };
 };
 
