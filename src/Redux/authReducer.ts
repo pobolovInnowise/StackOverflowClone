@@ -183,7 +183,7 @@ export const setIsCredentialsCorrectAC = (value: boolean | number):ActionType  =
 
 export const deleteAccountTC = () => {
   return async (dispatch: AppDispatch) => {
-    const response = await api.deleteAccount();
+     await api.deleteAccount();
     dispatch(emptyingStateAC());
     dispatch(clearMySnippetsAC());
   };
@@ -239,7 +239,7 @@ export const changeSnippetTC = (
   snippetId: number
 ) => {
   return async (dispatch: AppDispatch) => {
-    const response = await api.changeSnippet(language, code, snippetId);
+    await api.changeSnippet(language, code, snippetId);
     dispatch(getUserSnippetsTC());
   };
 };
@@ -258,7 +258,7 @@ export const changeQuestionTC = (
 ) => {
   return async (dispatch: AppDispatch, getState: () => RootState) => {
     const state = getState();
-    const response = await api.changeQuestion(
+     await api.changeQuestion(
       title,
       description,
       code,

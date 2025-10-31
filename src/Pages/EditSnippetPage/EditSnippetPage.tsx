@@ -12,7 +12,7 @@ const EditSnippetPage = () => {
   );
 
   const [code, setCode] = useState<string>(snippetToEdit.code);
-  const [selectedLanguage, setSelectedLanguage] = useState<string>(
+  const [selectedLanguage] = useState<string>(
     snippetToEdit.language
   );
   const [isSnippetPosted, setIsSnippetPosted] = useState<boolean>(false);
