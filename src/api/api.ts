@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 import { QuestionType } from '../Types/types';
 
@@ -61,13 +61,13 @@ class Api {
     }
   };
 
-  getSnippets = async (pageNumber: number, pageSize: number) => {
+  getSnippets = async (pageNumber: number, pageSize: number): Promise<AxiosResponse<any>> => {
     const api_url = `/api/snippets?page=${pageNumber}&limit=${pageSize}&sortBy=username:ASC`;
     try {
       const response = await api_axios.get(api_url);
       return response;
     } catch (error) {
-      return { error };
+      throw error;
     }
   };
 

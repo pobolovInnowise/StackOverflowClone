@@ -24,7 +24,7 @@ const MyQuestions = () => {
 
   const onQuestionClick = (id: number) => {
     dispatch(setSelectedQuestionIdAC(id));
-    navigate('/edit-question-page'); // editQP must read from state above mention id
+    navigate('/edit-question-page');
   };
 
   useEffect((): void => {
