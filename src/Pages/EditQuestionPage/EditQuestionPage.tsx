@@ -6,7 +6,7 @@ import { QuestionType } from '../../Types/types';
 import { useNavigate } from 'react-router-dom';
 import { changeQuestionTC } from '../../Redux/authReducer';
 
-const EditQuestionPage: React.FC = () => {
+const EditQuestionPage = () => {
   const navigate = useNavigate();
 
   const dispatch = useAppDispatch();
