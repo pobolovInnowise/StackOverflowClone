@@ -20,7 +20,7 @@ import MyQuestions from './Pages/MyQuestions/MyQuestions';
 import EditQuestionPage from './Pages/EditQuestionPage/EditQuestionPage';
 
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <div className="wrapper">
       <BrowserRouter>
