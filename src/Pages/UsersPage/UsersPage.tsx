@@ -42,11 +42,8 @@ const UsersPage = () => {
 
   useEffect((): void => {
     dispatch(getUsersTC());
-  }, []);
-
-  useEffect((): void => {
-    dispatch(getUsersTC());
   }, [currentPage]);
+
 
   return (
     <div className={styles.usersPage}>

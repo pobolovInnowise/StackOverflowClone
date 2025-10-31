@@ -46,11 +46,11 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     dispatch(getSnippetsFromServerTC());
-  }, []);
-
-  useEffect(() => {
-    dispatch(getSnippetsFromServerTC());
   }, [currentPage]);
+
+  // useEffect(() => {
+  //   dispatch(getSnippetsFromServerTC());
+  // }, [currentPage]);
 
   return (
     <div>

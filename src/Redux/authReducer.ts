@@ -118,18 +118,38 @@ export const changePasswordTC = (oldPassword: string, newPassword: string) => {
 
 export const loginUserTC = (username: string, password: string) => {
   return async (dispatch: AppDispatch) => {
-    const response = await api.loginUser(username, password);
-    if (response === 'error') {
+    try {
+      const response = await api.loginUser(username, password);
+
+      dispatch(setLoggedInUsernameInAC(response.data.data.username));
+      dispatch(setLoggedInIdAC(response.data.data.id));
+      dispatch(setLoggedInRoleAC(response.data.data.role));
+      dispatch(setIsLoggedInAC(true));
+      dispatch(setIsCredentialsCorrectAC(true));
+
+    } catch (error) {
       dispatch(setIsCredentialsCorrectAC(false));
-    } else {
+      console.error('Login error:', error);
+    }
+  };
+};
+
+
+export const checkActiveSessionTC = () => {
+  return async (dispatch: AppDispatch) => {
+    const response = await api.getMe();
+    console.log(response.data.data)
+    if(response.status === 200){
       dispatch(setLoggedInUsernameInAC(response.data.data.username));
       dispatch(setLoggedInIdAC(response.data.data.id));
       dispatch(setLoggedInRoleAC(response.data.data.role));
       dispatch(setIsLoggedInAC(true));
       dispatch(setIsCredentialsCorrectAC(true));
     }
+
   };
 };
+
 
 export const registerUserTC = (username: string, password: string) => {
   return async () => {
@@ -247,5 +267,7 @@ export const changeQuestionTC = (
     dispatch(getUserQuestionsTC());
   };
 };
+
+
 
 export default authReducer;

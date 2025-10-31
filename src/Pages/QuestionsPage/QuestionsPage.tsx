@@ -15,6 +15,7 @@ const QuestionsPage: React.FC = () => {
     navigate('/ask-question');
   };
 
+
   const dispatch = useAppDispatch();
 
   const questions: QuestionType[] = useAppSelector(
@@ -38,11 +39,8 @@ const QuestionsPage: React.FC = () => {
 
   useEffect(() => {
     dispatch(getQuestionsTC());
-  }, []);
-
-  useEffect(() => {
-    dispatch(getQuestionsTC());
   }, [currentPage]);
+
 
   const questionsElements: JSX.Element[] = questions.map((question) => (
     <div key={question.id}>

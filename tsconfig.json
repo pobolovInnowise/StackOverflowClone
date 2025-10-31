@@ -16,8 +16,11 @@
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "checkJs": false,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "plugins": [
+      { "name": "typescript-plugin-css-modules" }
+    ]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx",   "api/**/*.ts"],
   "exclude": ["node_modules", "**/*.js", "**/*.jsx"]
 }

@@ -1,7 +1,7 @@
-import * as styles from './Header.module.css';
+import  styles from './Header.module.css';
 import logo from '../../assets/logo-stackoverflow.svg';
 import { NavLink } from 'react-router-dom';
-import { logoutUserTC } from '../../Redux/authReducer';
+import { checkActiveSessionTC, logoutUserTC } from '../../Redux/authReducer';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 
@@ -10,6 +10,10 @@ const Header = () => {
 
   const dispatch = useAppDispatch();
   const isLoggedIn: boolean = useAppSelector((state) => state.auth.isLoggedIn);
+
+  if(!isLoggedIn){
+    dispatch(checkActiveSessionTC());
+  }
 
   const onLogoClick = () => {
     navigate('/');

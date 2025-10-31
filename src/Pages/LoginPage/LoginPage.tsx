@@ -52,7 +52,7 @@ const LoginPage: React.FC = () => {
         <button type="submit" className={styles.loginButton}>
           Log in
         </button>
-        <button className={styles.newUserButton} onClick={onNewUserClick}>
+        <button type="button" className={styles.newUserButton} onClick={onNewUserClick}>
           I'm new user
         </button>
         <div className={styles.credentialsErrorMessage}>
