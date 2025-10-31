@@ -6,10 +6,9 @@ import {
 import { useEffect } from 'react';
 import Question from '../Question/Question.js';
 import { QuestionType } from '../../Types/types';
-import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const MyQuestions: React.FC = () => {
+const MyQuestions = () => {
   const navigate = useNavigate();
 
   const dispatch = useAppDispatch();

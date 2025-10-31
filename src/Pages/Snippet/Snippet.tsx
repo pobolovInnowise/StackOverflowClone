@@ -1,5 +1,4 @@
-import * as React from 'react';
-import * as styles from './Snippet.module.css';
+import styles from './Snippet.module.css';
 import { postMarkTC } from '../../Redux/homePageReducer';
 import like from '../../assets/like-icon.png';
 import dislike from '../../assets/dislike-icon.png';
@@ -11,7 +10,7 @@ type Properties = {
   snippet: SnippetType;
   onCommentClick: (id: number) => void;
 };
-const Snippet: React.FC<Properties> = ({ snippet, onCommentClick }) => {
+const Snippet = ({ snippet, onCommentClick }: Properties) => {
   const isLoggedIn: boolean = useAppSelector((state) => state.auth.isLoggedIn);
 
   const dispatch = useAppDispatch();

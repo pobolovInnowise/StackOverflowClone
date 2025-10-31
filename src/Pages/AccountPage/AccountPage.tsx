@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import userIcon from '../../assets/user-icon.png';
-import * as styles from './AccountPage.module.css';
+import styles from './AccountPage.module.css';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 

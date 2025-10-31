@@ -1,12 +1,11 @@
-import * as React from 'react';
-import * as styles from './User.module.css';
+import styles from './User.module.css';
 import { UserType } from '../../Types/types';
 
 type Properties = {
   user: UserType;
   onClick: (id: number) => void;
 };
-const User: React.FC<Properties> = ({ user, onClick }) => {
+const User = ({ user, onClick }:Properties) => {
   return (
     <div className={styles.userCard} onClick={() => onClick(user.id)}>
       <div className={styles.userInfo}>

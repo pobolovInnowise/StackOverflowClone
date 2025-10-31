@@ -1,12 +1,11 @@
-import * as React from 'react';
-import * as styles from './Question.module.css';
+import styles from './Question.module.css';
 import { QuestionType } from '../../Types/types';
 
 type Properties = {
   question: QuestionType;
 };
 
-const Question: React.FC<Properties> = ({ question }) => {
+const Question = ({ question }: Properties) => {
   return (
     <div>
       <div className={styles.question}>

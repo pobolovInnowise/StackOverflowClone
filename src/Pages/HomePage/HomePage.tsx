@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 import {
@@ -8,11 +7,10 @@ import {
 } from '../../Redux/homePageReducer';
 import Snippet from '../Snippet/Snippet.js';
 import { useNavigate } from 'react-router-dom';
-import * as styles from './HomePage.module.css';
 import Paginator from '../../Components/Paginator/Paginator';
 import { SnippetType } from '../../Types/types';
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
   const navigate = useNavigate();
 
   const snippets: SnippetType[] = useAppSelector(
@@ -47,10 +45,6 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     dispatch(getSnippetsFromServerTC());
   }, [currentPage]);
-
-  // useEffect(() => {
-  //   dispatch(getSnippetsFromServerTC());
-  // }, [currentPage]);
 
   return (
     <div>

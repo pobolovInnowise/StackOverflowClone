@@ -1,11 +1,10 @@
-import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 import { loginUserTC } from '../../Redux/authReducer';
 import { useNavigate } from 'react-router-dom';
-import * as styles from './LoginPage.module.css';
+import styles from './LoginPage.module.css';
 
-const LoginPage: React.FC = () => {
+const LoginPage = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');

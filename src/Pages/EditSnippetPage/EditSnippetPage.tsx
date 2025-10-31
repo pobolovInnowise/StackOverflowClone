@@ -1,13 +1,12 @@
-import * as React from 'react';
 import { useEffect, useState } from 'react';
 import Editor from '@monaco-editor/react';
-import * as styles from './EditSnippetPage.module.css';
+import styles from './EditSnippetPage.module.css';
 import { getSnippetLanguagesTC } from '../../Redux/homePageReducer';
 import { changeSnippetTC } from '../../Redux/authReducer';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 import { SnippetType } from '../../Types/types';
 
-const EditSnippetPage: React.FC = () => {
+const EditSnippetPage = () => {
   const snippetToEdit: SnippetType = useAppSelector(
     (state) => state.auth.snippetToEdit
   );

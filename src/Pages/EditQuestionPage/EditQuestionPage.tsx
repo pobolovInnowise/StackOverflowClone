@@ -1,7 +1,6 @@
-import * as React from 'react';
 import { useEffect, useState } from 'react';
 import Editor from '@monaco-editor/react';
-import * as styles from './EditQuestionPage.module.css';
+import styles from './EditQuestionPage.module.css';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 import { QuestionType } from '../../Types/types';
 import { useNavigate } from 'react-router-dom';

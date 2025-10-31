@@ -1,11 +1,10 @@
-import * as React from 'react';
 import { useState } from 'react';
 import Editor from '@monaco-editor/react';
-import * as styles from './AskQuestionPage.module.css';
+import styles from './AskQuestionPage.module.css';
 import { useAppDispatch } from '../../Redux/hooks';
 import { postQuestionTC } from '../../Redux/questionsReducer';
 
-const AskQuestionPage: React.FC = () => {
+const AskQuestionPage = () => {
   const dispatch = useAppDispatch();
 
   const [title, setTitle] = useState('');

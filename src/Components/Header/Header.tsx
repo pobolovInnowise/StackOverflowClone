@@ -1,4 +1,4 @@
-import  styles from './Header.module.css';
+import styles from './Header.module.css';
 import logo from '../../assets/logo-stackoverflow.svg';
 import { NavLink } from 'react-router-dom';
 import { checkActiveSessionTC, logoutUserTC } from '../../Redux/authReducer';

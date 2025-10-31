@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 import {
@@ -8,7 +7,7 @@ import {
 } from '../../Redux/userPageReducer';
 import { useNavigate } from 'react-router-dom';
 import User from './User';
-import * as styles from './UsersPage.module.css';
+import styles from './UsersPage.module.css';
 import Paginator from '../../Components/Paginator/Paginator';
 import { UserType } from '../../Types/types';
 

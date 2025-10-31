@@ -1,6 +1,5 @@
-import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import * as styles from './Navbar.module.css';
+import styles from './Navbar.module.css';
 import homeIcon from '../../assets/home-icon.png';
 import usersIcon from '../../assets/users-icon.png';
 import questionsIcon from '../../assets/question-icon.png';
@@ -9,7 +8,7 @@ import codeSnippet from '../../assets/code-snippet.svg';
 import snippets from '../../assets/snippets.png';
 import { useAppSelector } from '../../Redux/hooks';
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const loggedInUsername: string = useAppSelector(
     (state) => state.auth.loggedInUsername
   );

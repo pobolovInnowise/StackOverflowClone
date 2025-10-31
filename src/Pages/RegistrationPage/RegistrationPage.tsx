@@ -1,11 +1,10 @@
-import * as React from 'react';
 import { useState } from 'react';
-import * as styles from './RegistrationPage.module.css';
+import styles from './RegistrationPage.module.css';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../Redux/hooks';
 import { registerUserTC } from '../../Redux/authReducer';
 
-const RegistrationPage: React.FC = () => {
+const RegistrationPage = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 

@@ -1,6 +1,5 @@
-import * as React from 'react';
 import { useState } from 'react';
-import * as styles from './Paginator.module.css';
+import styles from './Paginator.module.css';
 
 type Properties = {
   currentPage: number;
@@ -8,11 +7,11 @@ type Properties = {
   callback: (value: number) => void;
 };
 
-const Paginator: React.FC<Properties> = ({
+const Paginator = ({
   currentPage,
   pagesCount,
   callback,
-}) => {
+}:Properties) => {
   const [currentPageForPaginator, setCurrentPageForPaginator] =
     useState(currentPage);
 

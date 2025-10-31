@@ -1,9 +1,8 @@
-import * as React from 'react';
 import { useAppSelector } from '../../Redux/hooks';
-import * as styles from './UserProfilePage.module.css';
+import styles from './UserProfilePage.module.css';
 import { UserProfileType } from '../../Types/types';
 
-const UserProfilePage: React.FC = () => {
+const UserProfilePage = () => {
   const profile: UserProfileType = useAppSelector(
     (state) => state.usersPage.selectedUserProfile
   );

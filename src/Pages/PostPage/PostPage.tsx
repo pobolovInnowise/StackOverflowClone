@@ -1,15 +1,14 @@
-import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 import Snippet from '../Snippet/Snippet.js';
-import * as styles from './PostPage.module.css';
+import styles from './PostPage.module.css';
 import {
   getSnippetsFromServerTC,
   postCommentTC,
 } from '../../Redux/homePageReducer';
 import { CommentType, SnippetType } from '../../Types/types';
 
-const PostPage: React.FC = () => {
+const PostPage = () => {
   const [comment, setComment] = useState('');
   const dispatch = useAppDispatch();
   const selectedSnippetId = useAppSelector(

@@ -1,14 +1,13 @@
-import * as React from 'react';
 import { useEffect, useState } from 'react';
 import Editor from '@monaco-editor/react';
-import * as styles from './PostSnippetPage.module.css';
+import styles from './PostSnippetPage.module.css';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 import {
   getSnippetLanguagesTC,
   postSnippetTC,
 } from '../../Redux/homePageReducer';
 
-const PostSnippetPage: React.FC = () => {
+const PostSnippetPage = () => {
   const languageMap = {
     JavaScript: 'javascript',
     Python: 'python',

@@ -1,13 +1,12 @@
-import * as React from 'react';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 import { getUserSnippetsTC, setSnippetToEditAC } from '../../Redux/authReducer';
 import Snippet from '../Snippet/Snippet.js';
-import * as styles from './MySnippetsPage.module.css';
+import styles from './MySnippetsPage.module.css';
 import { useNavigate } from 'react-router-dom';
 import { SnippetType } from '../../Types/types';
 
-const MySnippetsPage: React.FC = () => {
+const MySnippetsPage = () => {
   const navigate = useNavigate();
 
   const dispatch = useAppDispatch();
