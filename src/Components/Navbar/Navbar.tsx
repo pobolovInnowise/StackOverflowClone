@@ -9,78 +9,80 @@ import snippets from '../../assets/snippets.png';
 import { useAppSelector } from '../../Redux/hooks';
 
 const Navbar = () => {
-  const loggedInUsername: string = useAppSelector(
-    (state) => state.auth.loggedInUsername
-  );
-  const isLoggedIn: boolean = useAppSelector((state) => state.auth.isLoggedIn);
+  const loggedInUsername = useAppSelector((state) => state.auth.loggedInUsername);
+  const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
 
   return (
-    <div className={styles.navbar}>
-      <div style={{ color: '#0074cc' }}>
+    <nav className={styles.navbar}>
+      <div className={styles.username}>
         <b>{loggedInUsername}</b>
       </div>
-      <div>
-        <img src={homeIcon as string} alt="homeIcon" />
-        <NavLink to="/home">Home</NavLink>
-      </div>
-      <div>
-        <img src={userIcon as string} alt="userIcon" />
-        <NavLink
-          to="/my-account"
-          style={{
-            pointerEvents: !isLoggedIn ? 'none' : 'auto',
-            opacity: !isLoggedIn ? 0.5 : 1,
-          }}
-        >
-          My account
-        </NavLink>
-      </div>
-      <div>
-        <img src={codeSnippet as string} alt="codeSnippet" />
-        <NavLink
-          to="/post-snippet"
-          style={{
-            pointerEvents: !isLoggedIn ? 'none' : 'auto',
-            opacity: !isLoggedIn ? 0.5 : 1,
-          }}
-        >
-          Post snippet
-        </NavLink>
-      </div>
-      <div>
-        <img src={snippets as string} alt="snippets" />
-        <NavLink
-          to="/my-snippets"
-          style={{
-            pointerEvents: !isLoggedIn ? 'none' : 'auto',
-            opacity: !isLoggedIn ? 0.5 : 1,
-          }}
-        >
-          My snippets
-        </NavLink>
-      </div>
-      <div>
-        <img src={questionsIcon as string} alt="questionsIcon" />
-        <NavLink to="/questions">Questions</NavLink>
-      </div>
-      <div>
-        <img src={questionsIcon as string} alt="questionsIcon" />
-        <NavLink
-          to="/my-questions"
-          style={{
-            pointerEvents: !isLoggedIn ? 'none' : 'auto',
-            opacity: !isLoggedIn ? 0.5 : 1,
-          }}
-        >
-          My questions
-        </NavLink>
-      </div>
-      <div>
-        <img src={usersIcon as string} alt="usersIcon" />
-        <NavLink to="/users">Users</NavLink>
-      </div>
-    </div>
+
+      <NavLink to="/home" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
+        <img src={homeIcon} alt="homeIcon" />
+        <span>Home</span>
+      </NavLink>
+
+      <NavLink
+        to="/my-account"
+        className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+        style={{
+          pointerEvents: !isLoggedIn ? 'none' : 'auto',
+          opacity: !isLoggedIn ? 0.5 : 1,
+        }}
+      >
+        <img src={userIcon} alt="userIcon" />
+        <span>My account</span>
+      </NavLink>
+
+      <NavLink
+        to="/post-snippet"
+        className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+        style={{
+          pointerEvents: !isLoggedIn ? 'none' : 'auto',
+          opacity: !isLoggedIn ? 0.5 : 1,
+        }}
+      >
+        <img src={codeSnippet} alt="codeSnippet" />
+        <span>Post snippet</span>
+      </NavLink>
+
+      <NavLink
+        to="/my-snippets"
+        className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+        style={{
+          pointerEvents: !isLoggedIn ? 'none' : 'auto',
+          opacity: !isLoggedIn ? 0.5 : 1,
+        }}
+      >
+        <img src={snippets} alt="snippets" />
+        <span>My snippets</span>
+      </NavLink>
+
+      <NavLink to="/questions" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
+        <img src={questionsIcon} alt="questionsIcon" />
+        <span>Questions</span>
+      </NavLink>
+
+      <NavLink
+        to="/my-questions"
+        className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+        style={{
+          pointerEvents: !isLoggedIn ? 'none' : 'auto',
+          opacity: !isLoggedIn ? 0.5 : 1,
+        }}
+      >
+        <img src={questionsIcon} alt="questionsIcon" />
+        <span>My questions</span>
+      </NavLink>
+
+      <NavLink to="/users" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
+        <img src={usersIcon} alt="usersIcon" />
+        <span>Users</span>
+      </NavLink>
+    </nav>
   );
 };
 
 export default Navbar;
+

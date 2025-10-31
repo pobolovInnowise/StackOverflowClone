@@ -4,34 +4,43 @@
   align-items: flex-start;
   background-color: #f8f9f9;
   padding: 10px 0;
-  gap: 10px;
+  gap: 4px;
   grid-area: n;
   border-right: 1px solid #dedede;
 }
 
-.navbar div {
+.username {
+  color: #0074cc;
+  font-size: 14px;
+  padding: 10px 15px;
+}
+
+.navItem {
   display: flex;
   align-items: center;
   gap: 8px;
   width: 100%;
   padding: 10px 15px;
-  cursor: pointer;
-}
-
-.navbar div:hover {
-  background-color: #dedede;
-}
-
-.navbar img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-
-.navbar a {
   text-decoration: none;
   color: #333;
   font-size: 14px;
   font-weight: 500;
-  flex-grow: 1;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navItem:hover {
+  background-color: #e4e6e6;
+}
+
+.active {
+  background-color: #d0e3ff;
+  color: #0074cc;
+  font-weight: 600;
+}
+
+.navItem img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
